@@ -39,6 +39,10 @@ typedef struct s_fork
 	int	fork_id;
 }			t_fork;
 
+
+typedef	struct s_inputs t_inputs;
+
+
 /*          philo                    */
 
 typedef struct s_philo
@@ -50,9 +54,10 @@ typedef struct s_philo
 	t_fork		*left_fork;
 	t_fork		*right_fork;
 	pthread_t	thread_id;
+	t_inputs	*inputs;
 }			t_philo
 
-typedef	struct s_inputs
+struct s_inputs
 {
 	long	nbr_philos;
 	long	time_to_die;
@@ -63,7 +68,7 @@ typedef	struct s_inputs
 	bool	end_simulation;
 	t_fork	*forks;
 	t_philo *philos;
-}	t_inputs;
+};
 
 
 
