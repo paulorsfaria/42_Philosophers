@@ -41,7 +41,7 @@ typedef struct s_fork
 
 /*          philo                    */
 
-struct s_philo
+typedef struct s_philo
 {
 	int			id;
 	long		meals_counter;
@@ -50,7 +50,22 @@ struct s_philo
 	t_fork		*left_fork;
 	t_fork		*right_fork;
 	pthread_t	thread_id;
-}
+}			t_philo
+
+typedef	struct s_inputs
+{
+	long	nbr_philos;
+	long	time_to_die;
+	long	time_to_eat;
+	long	time_to_sleep;
+	long	max_meals;
+	long	time_start_simulation;
+	bool	end_simulation;
+	t_fork	*forks;
+	t_philo *philos;
+}	t_inputs;
+
+
 
 long int	ft_atol(char *str);
 int			check_if_nums(int argc, char *argv[]);
